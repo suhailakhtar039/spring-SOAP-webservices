@@ -36,6 +36,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -44,6 +45,37 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!-- JAXB2 Maven Plugin
+			XSD source folder
+			Java object source folder
+			clear folder-> false-->
+			<plugin>
+	            <groupId>org.codehaus.mojo</groupId>
+	            <artifactId>jaxb2-maven-plugin</artifactId>
+	            <version>2.5.0</version>
+	            <executions>
+	                <execution>
+	                    <id>xjc</id>
+	                    <goals>
+	                        <goal>xjc</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	            <configuration>
+	            
+	            	<sources>
+				      <source>${project.basedir}/src/main/resources/course-details.xsd</source>
+				   </sources>
+				   <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+	               <clearOutputDir>false</clearOutputDir>
+				   
+				   <!-- 
+				    <schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
+	                <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+	                <clearOutputDir>false</clearOutputDir>
+	                -->
+	            </configuration>
+        	</plugin>
 		</plugins>
 	</build>
 
