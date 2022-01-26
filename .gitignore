@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### META-INF ###
-..src/main/java/META-INF
+*META-INF*/
