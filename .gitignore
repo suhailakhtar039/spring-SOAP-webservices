@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### META-INF ###
-**/META-INF/
+META-INF
